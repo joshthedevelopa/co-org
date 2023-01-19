@@ -15,22 +15,22 @@
 <body>
     <header>
         <div class="avatar">
-            <img src>
+            <img src="{{ asset("images/logo.png") }}" alt="Logo" description="The logo of the site">
         </div>
         <div class="title">
             <span>My Organization Name</span>
             <span> Category</span>
         </div>
         <div class="action-btns">
-            <div class="btn">Login</div>
+            <div class="btn secondary">login</div>
         </div>
     </header>
     <main>
-        <section></section>
-        <section>
-            {{ $slot }}
-        </section>
+        {{ $slot }}
     </main>
+    <footer>
+        <span>Made with Care by SF Connect</span>
+    </footer>
 </body>
 
 </html>

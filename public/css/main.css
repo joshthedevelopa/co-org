@@ -1,7 +1,32 @@
+/* https://huemint.com/brand-2/#palette=f8fbfc-003031-634789 */
+
 :root {
+    /* Spacing, sizes and curves */
     --padding: 1rem;
+    --padding2x: 2rem;
+
     --margin: 1rem;
+    --margin2x: 1rem;
+
     --radius: 0.5rem;
+    --header-height: 70px;
+
+    /* Colors */
+    --border-color: #f6f6f6;
+    
+    --dark-text-color: #003031;
+    --light-text-color: #665380;
+    
+    --color1: #f8fbfc;
+    --alternative-color: #5642a4;
+
+    --primary-color: #20009b;
+    --primary-accent-color: #eae6fc;
+}
+
+@font-face {
+    font-family: 'Gothic Font';
+    src: url("fonts/Gothic A1/GothicA1-Regular.ttf");
 }
 
 * {
@@ -9,37 +34,63 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
-    background-color: #5603AD;
-    /* display: flex;
+    display: flex;
     justify-content: space-between;
-    align-items: center; */
-    display: grid;
-    grid-template-areas: "section section section";
-    padding: var(--padding);
+    align-items: center;
+    height: var(--header-height);
+    padding: 0 var(--padding2x);
+    border-bottom: solid var(--border-color) 3px;
 }
 
-header > * {
-    grid-area: "section";
+main {
+    min-height: calc(100vh - (var(--header-height) * 1.5))
+}
+
+footer {
+    height: calc(var(--header-height) * 0.5);
+    text-align: center;
+    color: #003031;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header > div {
+    flex: 1;
+}
+
+header > .avatar {
+    grid-area: avatar;
+}
+
+header > .avatar > img {
+    width: 50px;
+    height: 50px;
+}
+
+header > .title {
+    grid-area: title;
 }
 
 header > .action-btns {
+    grid-area: action-btns;
     display: flex;
     justify-content: end;
+    align-items: center;
 }
 
 
-/* Generics */
+/***** Generics *****/
 .avatar {
-    width: 40px;
-    height: 40px;
     border-radius: 100%;
-    background: #8367c7
 }
 
-.avatar img {
+.avatar > img {
     width: 100%;
     height: 100%;
     border-radius: 100%;
@@ -49,22 +100,44 @@ header > .action-btns {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .title > span:first-child {
+    color: var(--dark-text-color);
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .title > span:last-child {
-    font-size: 0.95rem;
+    color: var(--light-text-color);
 }
 
 .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: calc(var(--padding) * 0.5) calc(var(--padding) * 1.5);
-    background: #C2f8fb;
+    padding: calc(var(--padding) * 0.5) var(--padding2x);
+    color: var(--alternative-color);
+    border: solid var(--alternative-color) 1px;
     border-radius: var(--radius);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover {
+    border-color: #0030316f !important;
+}
+
+.btn:active {
+    transform: translateY(0.5px);
+}
+
+.btn.primary {
+    background-color: var(--primary-color);
+    color: var(--primary-accent-color);
+    border-color: var(--primary-color);
+}
+
+.btn.secondary {
+    background-color: var(--primary-accent-color);
+    border-color: var(--primary-accent-color);
+    color: var(--primary-color);
 }
