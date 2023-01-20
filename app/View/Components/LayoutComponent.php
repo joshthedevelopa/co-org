@@ -6,16 +6,16 @@ use Illuminate\View\Component;
 
 class LayoutComponent extends Component
 {
+    public string $title;
 
-    public string $type;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($type)
+    public function __construct($title)
     {
-        $this->type = $type;
+        $this->title = $title;
     }
 
     /**

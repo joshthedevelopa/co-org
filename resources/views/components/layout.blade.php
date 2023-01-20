@@ -8,29 +8,40 @@
 
     <title>{{ $title }}</title>
 
-    <link rel="stylesheet" href="{{ asset("css/main.css") }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" type="text/css">
 
 </head>
 
 <body>
+
     <header>
-        <div class="avatar">
-            <img src="{{ asset("images/logo.png") }}" alt="Logo" description="The logo of the site">
-        </div>
-        <div class="title">
-            <span>My Organization Name</span>
-            <span> Category</span>
-        </div>
-        <div class="action-btns">
-            <div class="btn secondary">login</div>
+        <nav class="navigation">
+            <img class="logo" src="{{ asset('images/logo.png') }}">
+            <ul>
+                <li>Subscriptions</li>
+                <li>Request</li>
+            </ul>
+        </nav>
+        <div class="profile">
+            <div class="title">
+                <span>Org Me Inc.</span>
+                <span>NGO</span>
+            </div>
+            <div class="avatar">
+                <img src="">
+            </div>
+            <div class="btn primary">Signin</div>
         </div>
     </header>
     <main>
+
         {{ $slot }}
+
     </main>
     <footer>
-        <span>Made with Care by SF Connect</span>
+        <span>Product of the SF Foundation</span>
     </footer>
+
 </body>
 
 </html>
